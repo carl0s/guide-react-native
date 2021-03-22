@@ -2,7 +2,7 @@ import React from 'react'
 import { Text, FlatList, Pressable } from 'react-native'
 import { gql, useQuery } from '@apollo/client'
 import { AppLoading } from 'expo'
-
+import tailwind from 'tailwind-rn';
 import styles from './styles'
 
 const CHAPTERS_QUERY = gql`
@@ -27,7 +27,7 @@ const ChapterItem = ({ chapter, onPress }) => {
   }
 
   return (
-    <Pressable style={styles.item} onPress={onPress}>
+    <Pressable style={tailwind('pt-12 text-left p-4')} onPress={onPress}>
       <Text style={styles.header}>{header}</Text>
       {subheader && <Text style={styles.subheader}>{subheader}</Text>}
     </Pressable>
